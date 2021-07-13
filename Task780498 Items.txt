@@ -1,0 +1,37 @@
+Issue: Currently the following NetTeller services/applications are no longer used in pre-production and production environments.
+
+FileProcessingFramework (FPF) windows service, PowerPayBackendProcessing(PPBP) windows service, iPayService(IPS) web service,  PowerPayWebService(PPWS), iPayPortal(IPP) web application, AudioTel Payment Service(ATPS) web service.
+
+Those services/applications were disabled and later removed from all NetTeller environments by task 775789 by operations last month.
+
+Request:  Please decommission those services/applications, so that they are not being built anymore. This includes 
+
+removing the dependency from the service/application, so that it will not be force to build when a 
+dependent library is being built. For example, when changing "NetTeller Share" source include a dependency from "AudioTelPaymentService" because "Utils" was included on that solution.
+
+Removing octopus build/source of NetTeller Components/Applications that are no longer used in production.  
+ 
+(Live Bill Pay components/applications were removed from production on 2/26/2021 by operations with TFS task 775789.)
+ 
+Components/Applications - FileProcessingFramework (FPF) windows service, PowerPayBackendProcessing(PPBP) windows service, iPayService(IPS) web service,  PowerPayWebService(PPWS), iPayPortal(IPP) web application, AudioTel Payment Service(ATPS) web service.
+ 
+Solution:
+
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/NetTeller Shared/PowerPay/FileProcessingFramework
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/NetTeller Shared/PowerPay/FileProcessingFramework
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/iPayPortal/iPayService
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/PowerPayWebService
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/iPayPortal/iPayPortal
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/AudioTelPaymentService
+
+
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/AudioTelStmtsWebService
+
+$/Nettlr/Products/NT-Products/NetTeller/Main/source/GuaranteedPaymentService
